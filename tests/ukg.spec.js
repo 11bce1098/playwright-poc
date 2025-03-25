@@ -14,16 +14,16 @@ test.describe("Testing UKG Timekeeping Application", ()=>{
         await page.getByRole('textbox', { name: 'Password' }).click();
         await page.getByRole('textbox', { name: 'Password' }).fill('Pr0mensi0ns@UKG');
         await page.getByRole('button', { name: 'Sign In' }).click();
-        await page.waitForLoadState('networkidle');
-        await page.waitForTimeout(5000);
+        await page.waitForLoadState('networkidle')
         await page.getByText('Welcome back, Igor').click();
         await page.goto('http://timekeeping87-b-k8s.int.dev.mykronos.com/timekeeping#/myTimecard');
         await page.getByText('Current Pay Period').click();
         await page.getByText('Last 4 Weeks').click();
         await expect(page.locator('[id="_timeFrame"]')).toContainText('Last 4 Weeks');
         await page.getByText('Sun 2/23').click();
-        await page.getByText('Sat 3/22').click();
         await expect(page.getByText('Sun 2/23')).toBeVisible();
+        //await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+        await page.getByText('Sat 3/22').click();
         await expect(page.getByText('Sat 3/22')).toBeVisible();
         await page.getByRole('button', { name: 'Main Menu' }).click();
         await page.getByRole('button', { name: 'Sign Out' }).click();
