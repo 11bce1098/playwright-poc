@@ -1,0 +1,15 @@
+{
+  "websiteURL":"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+  "username":"Admin",
+  "password":"admin123",
+  "firstName":"Sachin",
+  "middleName":"Ramesh",
+  "lastName":"Tendulkar",
+  "email":"Sachin@gmail.com",
+  "contactNumber":"9876543123",
+  "resumePath":"resume.pdf",
+  "keywords": "testing",
+  "notes": "testing",
+  "username_pim": "masterBlaster",
+  "password_pin": "meHuDon@123"
+}
