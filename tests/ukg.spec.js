@@ -21,10 +21,10 @@ test.describe("Testing UKG Timekeeping Application", ()=>{
         await page.getByText('Current Pay Period').click();
         await page.getByText('Last 4 Weeks').click();
         await expect(page.locator('[id="_timeFrame"]')).toContainText('Last 4 Weeks');
-        await page.getByText('Mon 2/17').click();
-        await page.getByText('Fri 3/14').click();
-        await expect(page.getByText('Mon 2/17')).toBeVisible();
-        await expect(page.getByText('Fri 3/14')).toBeVisible();
+        await page.getByText('Sun 2/23').click();
+        await page.getByText('Sat 3/22').click();
+        await expect(page.getByText('Sun 2/23')).toBeVisible();
+        await expect(page.getByText('Sat 3/22')).toBeVisible();
         await page.getByRole('button', { name: 'Main Menu' }).click();
         await page.getByRole('button', { name: 'Sign Out' }).click();
         await page.waitForLoadState('networkidle')
