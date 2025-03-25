@@ -14,7 +14,8 @@ test.describe("Testing UKG Timekeeping Application", ()=>{
         await page.getByRole('textbox', { name: 'Password' }).click();
         await page.getByRole('textbox', { name: 'Password' }).fill('Pr0mensi0ns@UKG');
         await page.getByRole('button', { name: 'Sign In' }).click();
-        await page.waitForLoadState('networkidle')
+        await page.waitForLoadState('networkidle');
+        await page.waitForTimeout(5000);
         await page.getByText('Welcome back, Igor').click();
         await page.goto('http://timekeeping87-b-k8s.int.dev.mykronos.com/timekeeping#/myTimecard');
         await page.getByText('Current Pay Period').click();
